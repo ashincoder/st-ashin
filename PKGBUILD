@@ -1,6 +1,6 @@
 # Maintainer: Ashin Antony <ashinant15@gmail.com>
 pkgname=st-ashin-git
-pkgver=0.8.4
+pkgver=0.8.4.r2.577280c
 pkgrel=1
 pkgdesc="My custom build of st patched."
 arch=(x86_64 i686)
