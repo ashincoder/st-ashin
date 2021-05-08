@@ -1,4 +1,4 @@
-static char *font = "Hack:pixelsize=14:antialias=true:autohint=true";
+static char *font = "FiraCode Nerd Font:pixelsize=14:antialias=true:autohint=true";
 static char *font2[] = { 
     "JoyPixels:pixelsize=14:antialias=true:autohint=true",
 };
