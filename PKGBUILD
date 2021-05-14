@@ -1,15 +1,15 @@
 # Maintainer: Ashin Antony <ashinant15@gmail.com>
 pkgname=st-ashin-git
-pkgver=0.8.4.r2.577280c
+pkgver=0.8.4
 pkgrel=1
-pkgdesc="My custom build of st patched."
-arch=(x86_64 i686)
+pkgdesc="A heavily-patched and customized build of st the Suckless simple terminal from Ashin Antony."
+arch=(x86_64)
 url="https://github.com/ashincoder/st-ashin.git"
 license=('MIT')
 groups=()
 depends=(nerd-fonts-fira-code ttf-joypixels)
 makedepends=(git)
-checkdepends=(nerd-fonts-fira-code)
+checkdepends=()
 optdepends=()
 provides=(st)
 conflicts=(st)
@@ -32,11 +32,11 @@ build() {
 }
 
 package() {
-  cd st-ashin  
+  cd st-ashin
   mkdir -p ${pkgdir}/opt/${pkgname}
   cp -rf * ${pkgdir}/opt/${pkgname}
   make PREFIX=/usr DESTDIR="${pkgdir}" install
   install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-  install -Dm644 README.md "${pkgdir}/usr/share/doc/${pkgname}/README.md"
+  install -Dm644 README.org "${pkgdir}/usr/share/doc/${pkgname}/README.org"
 }
 
