@@ -1,6 +1,6 @@
 static char *font = "FiraCode Nerd Font:pixelsize=14:antialias=true:autohint=true";
 static char *font2[] = { 
-    "FiraCode Nerd Font:pixelsize=14:antialias=true:autohint=true",
+    "Font Awesome 5 Free:pixelsize=14:antialias=true:autohint=true",
 };
 static int borderpx = 2;
 
