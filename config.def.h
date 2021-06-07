@@ -1,4 +1,4 @@
-static char *font = "FiraCode Nerd Font:pixelsize=14:antialias=true:autohint=true";
+static char *font = "JetBrains Mono Nerd Font:pixelsize=15.5:antialias=true:autohint=true";
 static char *font2[] = { 
     "Font Awesome 5 Free:pixelsize=14:antialias=true:autohint=true",
 };
