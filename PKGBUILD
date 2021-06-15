@@ -1,13 +1,13 @@
 # Maintainer: Ashin Antony <ashinant15@gmail.com>
 pkgname=st-ashin-git
-pkgver=0.8.4
+pkgver=0.8.4.r.
 pkgrel=1
 pkgdesc="A heavily-patched and customized build of st the Suckless simple terminal from Ashin Antony."
 arch=(x86_64)
 url="https://github.com/ashincoder/st-ashin.git"
 license=('MIT')
 groups=()
-depends=(nerd-fonts-fira-code libx11)
+depends=(nerd-fonts-jetbrains-mono libx11)
 makedepends=(git)
 checkdepends=()
 optdepends=()
