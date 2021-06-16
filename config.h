@@ -9,6 +9,7 @@ static char *font =
     "JetBrains Mono Nerd Font:pixelsize=15:antialias=true:autohint=true";
 /* Spare fonts */
 static char *font2[] = {
+    "Noto Color Emoji:pixelsize=12:antialias=true:autohint=true",
     "Font Awesome Free 5:pixelsize=12:antialias=true:autohint=true",
 };
 
@@ -198,9 +199,9 @@ static Shortcut shortcuts[] = {
     {ControlMask, XK_Print, toggleprinter, {.i = 0}},
     {ShiftMask, XK_Print, printscreen, {.i = 0}},
     {XK_ANY_MOD, XK_Print, printsel, {.i = 0}},
-    {TERMMOD, XK_Prior, zoom, {.f = +1}},
-    {TERMMOD, XK_Next, zoom, {.f = -1}},
-    {TERMMOD, XK_Home, zoomreset, {.f = 0}},
+    {TERMMOD,              XK_K,           zoom,           {.f = +1} },
+    {TERMMOD,              XK_J,           zoom,           {.f = -1} },
+    {TERMMOD,              XK_U,           zoomreset,      {.f =  0} },
     {TERMMOD, XK_C, clipcopy, {.i = 0}},
     {TERMMOD, XK_V, clippaste, {.i = 0}},
     {TERMMOD, XK_Y, selpaste, {.i = 0}},
