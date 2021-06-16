@@ -6,10 +6,11 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char *font =
-    "JetBrains Mono Nerd Font:pixelsize=15:antialias=true:autohint=true";
+    "JetBrains Mono Nerd Font:pixelsize=12:antialias=true:autohint=true";
 /* Spare fonts */
 static char *font2[] = {
     "Font Awesome Free 5:pixelsize=12:antialias=true:autohint=true",
+    "monospace:pixelsize=11:antialias=true:autohint=true",
 };
 
 static int borderpx = 2;
@@ -112,25 +113,26 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.9;
+float alpha = 0.8;
 
 /* Terminal colors (16 first used in escape sequence) */
-
 static const char *colorname[] = {
     "#11121D", /* hard contrast: #1d2021 / soft contrast: #32302f */
     "#a9b1d6", "#98971a", "#d79921", "#458588", "#b16286", "#689d6a", "#a89984",
     "#928374", "#fb4934", "#b8bb26", "#fabd2f", "#83a598", "#d3869b", "#8ec07c",
     "#ebdbb2", [255] = 0,
+
     /* more colors can be added after 255 to use with DefaultXX */
     "#add8e6", /* 256 -> cursor */
     "#a9b1d6", /* 257 -> rev cursor*/
     "#11121D", /* 258 -> bg */
-    "#a9b1d6", /* 259 -> fg */
+    "#fff",    /* 259 -> fg */
 };
-    /*
-     * Default colors (colorname index)
-     * foreground, background, cursor, reverse cursor
-     */
+
+/*
+ * Default colors (colorname index)
+ * foreground, background, cursor, reverse cursor
+ */
 unsigned int defaultfg = 259;
 unsigned int defaultbg = 258;
 unsigned int defaultcs = 256;
@@ -179,8 +181,8 @@ static uint forcemousemod = ShiftMask;
 static MouseShortcut mshortcuts[] = {
     /* mask                 button   function        argument       release */
 
-    {XK_ANY_MOD, Button4, kscrollup, {.i = 1}, 0, /* !alt */ -1},
-    {XK_ANY_MOD, Button5, kscrolldown, {.i = 1}, 0, /* !alt */ -1},
+    { ShiftMask,            Button4, kscrollup,      {.i = 1} },
+    { ShiftMask,            Button5, kscrolldown,    {.i = 1} },
     {XK_ANY_MOD, Button2, selpaste, {.i = 0}, 1},
     {ShiftMask, Button4, ttysend, {.s = "\033[5;2~"}},
     {XK_ANY_MOD, Button4, ttysend, {.s = "\031"}},
@@ -206,8 +208,8 @@ static Shortcut shortcuts[] = {
     {TERMMOD, XK_Y, selpaste, {.i = 0}},
     {ShiftMask, XK_Insert, selpaste, {.i = 0}},
     {TERMMOD, XK_Num_Lock, numlock, {.i = 0}},
-    {ShiftMask, XK_Page_Up, kscrollup, {.i = -1}},
-    {ShiftMask, XK_Page_Down, kscrolldown, {.i = -1}},
+    { ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
+    { ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
 };
 
 /*
