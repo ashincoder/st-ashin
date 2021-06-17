@@ -119,8 +119,8 @@ float alpha = 0.9;
 
 static const char *colorname[] = {
     "#11121D", /* hard contrast: #1d2021 / soft contrast: #32302f */
-    "#a9b1d6", "#98971a", "#d79921", "#458588", "#b16286", "#689d6a", "#a89984",
-    "#928374", "#fb4934", "#b8bb26", "#fabd2f", "#83a598", "#d3869b", "#8ec07c",
+    "#a9b1d6", "#98971a", "#d79921", "#458588", "#b16286", "#3492eb", "#a89984",
+    "#928374", "#fb4934", "#b8bb26", "#fabd2f", "#83a598", "#0349fc", "#8ec07c",
     "#ebdbb2", [255] = 0,
     /* more colors can be added after 255 to use with DefaultXX */
     "#add8e6", /* 256 -> cursor */
