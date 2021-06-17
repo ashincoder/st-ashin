@@ -12,4 +12,4 @@ clone the repo. cd into it and Type this:
 ## Unicode Support
 ![Unicode screenshot](st.png)
 ## Colors Support
-![Colors screenshot](st.png)
+![Colors screenshot](st1.png)
