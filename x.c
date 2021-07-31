@@ -634,6 +634,7 @@ void brelease(XEvent *e) {
     return;
   if (e->xbutton.button == Button1)
     mousesel(e, 1);
+  openUrlOnClick(evcol(e), evrow(e), url_opener);
 }
 
 void bmotion(XEvent *e) {
@@ -2009,25 +2010,23 @@ run:
   return 0;
 }
 
-void
-opencopied(const Arg *arg)
-{
-	const size_t max_cmd = 2048;
-	const char *clip = xsel.clipboard;
-	if(!clip) {
-		fprintf(stderr, "Warning: nothing copied to clipboard\n");
-		return;
-	}
+void opencopied(const Arg *arg) {
+  const size_t max_cmd = 2048;
+  const char *clip = xsel.clipboard;
+  if (!clip) {
+    fprintf(stderr, "Warning: nothing copied to clipboard\n");
+    return;
+  }
 
-	/* account for space/quote (3) and \0 (1) and & (1) */
-	char cmd[max_cmd + strlen(clip) + 5];
-	strncpy(cmd, (char *)arg->v, max_cmd);
-	cmd[max_cmd] = '\0';
+  /* account for space/quote (3) and \0 (1) and & (1) */
+  char cmd[max_cmd + strlen(clip) + 5];
+  strncpy(cmd, (char *)arg->v, max_cmd);
+  cmd[max_cmd] = '\0';
 
-	strcat(cmd, " \"");
-	strcat(cmd, clip);
-	strcat(cmd, "\"");
-	strcat(cmd, "&");
+  strcat(cmd, " \"");
+  strcat(cmd, clip);
+  strcat(cmd, "\"");
+  strcat(cmd, "&");
 
-	system(cmd);
+  system(cmd);
 }
